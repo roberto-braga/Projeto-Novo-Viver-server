@@ -1,0 +1,339 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Novo Viver - Transformando Vidas</title>
+
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+
+            <a href="{% url 'core:home' %}" class="logo">
+                <img src="{% static 'images/novo_viver_4k.png' %}" alt="Projeto Novo Viver">
+            </a>
+
+            <nav class="navbar">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre Nós</a>
+                <a href="#projetos">Nossos Projetos</a>
+                <a href="#atividades-semanais">Atividades Semanais</a>
+                <a href="#voluntariado">Seja Voluntário</a>
+                <a href="{% url 'core:contato' %}">Contato</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="{% url 'donations:donate' %}" class="btn-doe">Doe Agora</a>
+                <a href="{% url 'admin:login' %}" class="btn-doe">Admin</a>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<section class="hero" id="inicio">
+    <div class="hero-content">
+        <div class="container">
+            <h1 class="hero-title">Projeto Novo Viver</h1>
+            <p class="hero-subtitle">
+                Dando assistência social e melhor qualidade de vida às pessoas em vulnerabilidade social, no Chapadão.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#sobre" class="btn btn-primary">Conheça Nossa Causa</a>
+                <a href="{% url 'donations:donate' %}" class="btn btn-secondary">Faça uma Doação</a>
+            </div>
+        </div>
+    </div>
+    <div class="hero-overlay"></div>
+    
+</section>
+
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Crianças Atendidas</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Voluntários</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Anos de Atuação</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Famílias Impactadas</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="sobre" id="sobre">
+    <div class="container">
+
+        <div class="section-header">
+            <h2 class="sobre-titulo">Sobre Nós</h2>
+            <p class="section-subtitle">Conheça a história do Projeto Novo Viver</p>
+        </div>
+
+        <div class="sobre-content">
+
+            <div class="sobre-text">
+                <h3>Nossa Missão</h3>
+                <p>
+                    O Projeto Novo Viver atua há mais de 10 anos com o intuito de trazer mais qualidade de vida
+                    para as famílias do Chapadão.
+                </p>
+
+                <h3>O Que Fazemos</h3>
+                <p>
+                    Desenvolvemos atividades educacionais, culturais e esportivas que promovem o desenvolvimento
+                    integral das crianças e adultos atendidos.
+                </p>
+
+                <div class="valores">
+                    <h3>Nossos Valores</h3>
+
+                    <div class="valores-grid">
+
+                        <div class="valor-item">
+                            <i class="fas fa-heart"></i>
+                            <span>Amor</span>
+                        </div>
+
+                        <div class="valor-item">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <span>Solidariedade</span>
+                        </div>
+
+                        <div class="valor-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Ética</span>
+                        </div>
+
+                        <div class="valor-item">
+                            <i class="fas fa-users"></i>
+                            <span>Comunidade</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="sobre-image">
+                <img src="{% static 'images/Super herois e crianças.jpg' %}" alt="Sobre o Projeto Novo Viver">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="projetos" id="projetos">
+    <div class="container">
+
+        <div class="section-header">
+            <h2 class="section-title">Nossos Projetos</h2>
+            <p class="section-subtitle">Conheça nossas principais iniciativas</p>
+        </div>
+
+        <div class="projetos-grid">
+
+            <div class="projeto-card">
+                <div class="projeto-icon"><i class="fas fa-book"></i></div>
+                <h3>Educação</h3>
+                <p>Apoio escolar e cursos profissionalizantes.</p>
+            </div>
+
+            <div class="projeto-card">
+                <div class="projeto-icon"><i class="fas fa-basketball-ball"></i></div>
+                <h3>Esportes e Lazer</h3>
+                <p>Levamos o esporte para as crianças do Chapadão.</p>
+            </div>
+
+            <div class="projeto-card">
+                <div class="projeto-icon"><i class="fas fa-music"></i></div>
+                <h3>Oficinas Culturais</h3>
+                <p>Música, arte, teatro e dança.</p>
+            </div>
+
+            <div class="projeto-card">
+                <div class="projeto-icon"><i class="fas fa-utensils"></i></div>
+                <h3>Alimentação</h3>
+                <p>Distribuição de alimentos para crianças da comunidade.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="atividades-semanais" id="atividades-semanais">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nossas Atividades Semanais</h2>
+          <p class="section-subtitle">Confira as nossas ações programadas para esta semana</p>
+        </div>
+
+        <div class="agenda-semanal">
+          <table id="agenda-semanal">
+            <thead>
+              <tr>
+                <th>Turno</th>
+                <th>Seg</th>
+                <th>Ter</th>
+                <th>Qua</th>
+                <th>Qui</th>
+                <th>Sex</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="turno">Manhã</td>
+                <td data-dia="seg" data-turno="manha">{% for a in schedule_map.seg.manha %}<div>{{ a }}</div>{% empty %}&nbsp;{% endfor %}</td>
+                <td data-dia="ter" data-turno="manha">{% for a in schedule_map.ter.manha %}<div>{{ a }}</div>{% empty %}&nbsp;{% endfor %}</td>
+                <td data-dia="qua" data-turno="manha">{% for a in schedule_map.qua.manha %}<div>{{ a }}</div>{% empty %}&nbsp;{% endfor %}</td>
+                <td data-dia="qui" data-turno="manha">{% for a in schedule_map.qui.manha %}<div>{{ a }}</div>{% empty %}&nbsp;{% endfor %}</td>
+                <td data-dia="sex" data-turno="manha">{% for a in schedule_map.sex.manha %}<div>{{ a }}</div>{% empty %}&nbsp;{% endfor %}</td>
+              </tr>
+              <tr>
+                <td class="turno">Tarde</td>
+                <td data-dia="seg" data-turno="tarde">{% for a in schedule_map.seg.tarde %}<div>{{ a }}</div>{% empty %}&nbsp;{% endfor %}</td>
+                <td data-dia="ter" data-turno="tarde">{% for a in schedule_map.ter.tarde %}<div>{{ a }}</div>{% empty %}&nbsp;{% endfor %}</td>
+                <td data-dia="qua" data-turno="tarde">{% for a in schedule_map.qua.tarde %}<div>{{ a }}</div>{% empty %}&nbsp;{% endfor %}</td>
+                <td data-dia="qui" data-turno="tarde">{% for a in schedule_map.qui.tarde %}<div>{{ a }}</div>{% empty %}&nbsp;{% endfor %}</td>
+                <td data-dia="sex" data-turno="tarde">{% for a in schedule_map.sex.tarde %}<div>{{ a }}</div>{% empty %}&nbsp;{% endfor %}</td>
+              </tr>
+              <tr>
+                <td class="turno">Noite</td>
+                <td data-dia="seg" data-turno="noite">{% for a in schedule_map.seg.noite %}<div>{{ a }}</div>{% empty %}&nbsp;{% endfor %}</td>
+                <td data-dia="ter" data-turno="noite">{% for a in schedule_map.ter.noite %}<div>{{ a }}</div>{% empty %}&nbsp;{% endfor %}</td>
+                <td data-dia="qua" data-turno="noite">{% for a in schedule_map.qua.noite %}<div>{{ a }}</div>{% empty %}&nbsp;{% endfor %}</td>
+                <td data-dia="qui" data-turno="noite">{% for a in schedule_map.qui.noite %}<div>{{ a }}</div>{% empty %}&nbsp;{% endfor %}</td>
+                <td data-dia="sex" data-turno="noite">{% for a in schedule_map.sex.noite %}<div>{{ a }}</div>{% empty %}&nbsp;{% endfor %}</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </section>
+
+
+<section class="voluntariado" id="voluntariado">
+    <div class="container">
+        <div class="voluntariado-content">
+
+            <div class="voluntariado-text">
+                <h2 class="voluntariado-titulo">Seja um Voluntário</h2>
+
+                <p>
+                    Venha fazer parte da nossa equipe!
+                </p>
+
+                <div class="beneficios">
+                    <h4>Como você pode ajudar:</h4>
+
+                    <ul>
+                        <li><i class="fas fa-check"></i> Apoio em atividades educacionais</li>
+                        <li><i class="fas fa-check"></i> Oficinas e cursos</li>
+                        <li><i class="fas fa-check"></i> Eventos e campanhas</li>
+                        <li><i class="fas fa-check"></i> Suporte administrativo</li>
+                    </ul>
+                </div>
+
+                <a href="{% url 'core:contato' %}" class="btn btn-primary">Quero ser Voluntário</a>
+            </div>
+
+            <div class="voluntariado-image">
+                <img src="{% static 'images/fundo header.png' %}" alt="Seja Voluntário">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+
+            <div class="footer-section">
+                <img src="{% static 'images/Novo_Viver_Branco-removebg-preview.png' %}"
+                     alt="Projeto Novo Viver"
+                     class="footer-logo">
+
+                <p>
+                    Dando assistência social e melhor qualidade de vida às pessoas em vulnerabilidade social, no Chapadão.
+                </p>
+
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Links Rápidos</h4>
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre Nós</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#voluntariado">Voluntariado</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Como Ajudar</h4>
+                <a href="{% url 'donations:donate' %}">Doações</a>
+                <a href="#voluntariado">Seja Voluntário</a>
+            </div>
+
+            <div class="footer-section" id="contato">
+                <h4>Contato</h4>
+
+                <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123</p>
+                <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                <p><i class="fas fa-envelope"></i> contato@novoviver.org.br</p>
+
+                <p>
+                    <i class="fas fa-clock"></i>
+                    Horário: <span class="horarios">07:00 às 18:30</span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Projeto Novo Viver. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function copiarPix() {
+        const pixText = "12.345.678/0001-90";
+        navigator.clipboard.writeText(pixText)
+            .then(() => alert("Chave PIX copiada!"));
+    }
+</script>
+
+</body>
+</html>

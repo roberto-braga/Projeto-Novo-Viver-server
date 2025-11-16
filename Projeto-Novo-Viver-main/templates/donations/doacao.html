@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'style1.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Faça uma Doação - Projeto Novo Viver</title>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="{% url 'core:home' %}" class="logo">
+          <img src="{% static 'images/novo_viver_4k.png' %}" alt="Projeto Novo Viver">
+        </a>
+
+        <nav class="navbar">
+          <a href="{% url 'core:home' %}#inicio">Início</a>
+          <a href="{% url 'core:home' %}#sobre">Sobre Nós</a>
+          <a href="{% url 'core:home' %}#projetos">Nossos Projetos</a>
+          <a href="{% url 'core:home' %}#atividades-semanais">Atividades Semanais</a>
+          <a href="{% url 'core:home' %}#voluntariado">Seja Voluntário</a>
+          <a href="{% url 'core:contato' %}">Contato</a>
+        </nav>
+
+           <div class="header-actions">
+                <a href="{% url 'donations:donate' %}" class="btn-doe">Doe Agora</a>
+                <a href="{% url 'admin:login' %}" class="btn-doe">Admin</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="doacoes" id="doacoes" style="margin-top: 120px;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Faça uma Doação</h2>
+        <p class="section-subtitle">Sua contribuição transforma vidas</p>
+      </div>
+
+      <div class="doacoes-content">
+        <div class="doacoes-text">
+          <h3>Como sua doação ajuda:</h3>
+
+          <div class="impacto-list">
+            <div class="impacto-item">
+              <strong>R$ 50</strong>
+              <span>Alimentação para 5 crianças</span>
+            </div>
+            <div class="impacto-item">
+              <strong>R$ 100</strong>
+              <span>Material escolar para 10 crianças</span>
+            </div>
+            <div class="impacto-item">
+              <strong>R$ 200</strong>
+              <span>Kit esportivo completo</span>
+            </div>
+            <div class="impacto-item">
+              <strong>R$ 500</strong>
+              <span>Oficina cultural mensal</span>
+            </div>
+          </div>
+
+          <div class="pix-section">
+            <h4>Doação via PIX</h4>
+            <div class="pix-code">
+              <strong>CNPJ: 12.345.678/0001-90</strong>
+              <span>Projeto Novo Viver</span>
+            </div>
+            <button class="btn-copy" onclick="copiarPix()">
+              <i class="fas fa-copy"></i> Copiar Chave PIX
+            </button>
+          </div>
+
+        </div>
+
+        <div class="doacoes-image">
+          <img src="{% static 'images/Crianças no mar .jpg' %}" alt="Faça uma Doação">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="{% static 'images/Novo_Viver_Branco-removebg-preview.png' %}" alt="Projeto Novo Viver" class="footer-logo">
+          <p>Dando assistência social e melhor qualidade de vida às pessoas em vulnerabilidade social, no Chapadão.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Links Rápidos</h4>
+          <a href="{% url 'core:home' %}#inicio">Início</a>
+          <a href="{% url 'core:home' %}#sobre">Sobre Nós</a>
+          <a href="{% url 'core:home' %}#projetos">Nossos Projetos</a>
+          <a href="{% url 'core:home' %}#voluntariado">Voluntariado</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Como Ajudar</h4>
+          <a href="{% url 'donations:donate' %}">Doações</a>
+          <a href="{% url 'core:home' %}#voluntariado">Seja Voluntário</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contato</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123</p>
+          <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+          <p><i class="fas fa-envelope"></i> contato@novoviver.org.br</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Projeto Novo Viver. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function copiarPix() {
+      const pixText = "12.345.678/0001-90";
+      navigator.clipboard.writeText(pixText).then(() => {
+        alert("Chave PIX copiada!");
+      });
+    }
+  </script>
+</body>
+</html>

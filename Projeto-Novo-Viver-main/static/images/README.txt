@@ -1,0 +1,1 @@
+Imagens do site organizadas nesta pasta.

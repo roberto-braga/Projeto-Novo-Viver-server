@@ -1,0 +1,195 @@
+:root {
+    --primary-color: #eb7658;
+    --secondary-color: rgb(39, 39, 39);
+    --accent-color: #ff6b35;
+    --text-dark: #000000;
+    --text-light: #666666;
+    --background-light: #f8f9fa;
+    --white: #ffffff;
+    --border-radius: 8px;
+    --box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background-light);
+    color: var(--text-dark);
+}
+
+h2, h3 {
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.navbar {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+}
+
+.navbar a:hover {
+    color: var(--primary-color);
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-doe {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-doe:hover {
+    background: #e55a2b;
+    transform: translateY(-2px);
+}
+
+.login-icon img {
+    border-radius: 50%;
+}
+
+.contato {
+    padding: 7rem 0 5rem;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.3rem;
+    color: var(--secondary-color);
+}
+
+.section-subtitle {
+    margin-top: 0.5rem;
+    color: var(--text-light);
+}
+
+.contato-content {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contato-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+}
+
+.contato-form h3 {
+    margin-bottom: 1.5rem;
+}
+
+.contato-form input,
+.contato-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+}
+
+.contato-form button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.contato-form button:hover {
+    background: #d45a40;
+}
+
+.voltar {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    background: var(--secondary-color);
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.footer p {
+    color: white;
+}

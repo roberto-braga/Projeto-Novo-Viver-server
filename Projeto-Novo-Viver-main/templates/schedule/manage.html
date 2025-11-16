@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'style1.css' %}">
+  <title>Gerenciar Cronograma</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="{% url 'core:home' %}" class="logo">
+            <img src="{% static 'images/LOGO.jpeg' %}" alt="Projeto Novo Viver">
+        </a>
+        <nav class="navbar">
+          <a href="{% url 'core:home' %}#inicio">Início</a>
+          <a href="{% url 'core:home' %}#atividades-semanais">Atividades Semanais</a>
+        </nav>
+        <div class="header-actions">
+          <a href="{% url 'logout' %}" class="btn-doe">Sair</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="doacoes" style="margin-top: 120px;">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Gerenciar Cronograma</h2>
+        <p class="section-subtitle">Adicione ou remova atividades por dia e turno</p>
+      </div>
+
+      {% if messages %}
+        <div class="messages">
+          {% for message in messages %}
+            <div class="message">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <form method="post" class="form">
+        {% csrf_token %}
+        <div class="form-row">{{ form.day.label_tag }} {{ form.day }}</div>
+        <div class="form-row">{{ form.shift.label_tag }} {{ form.shift }}</div>
+        <div class="form-row">{{ form.activity.label_tag }} {{ form.activity }}</div>
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+      </form>
+
+      <div style="margin-top: 24px;">
+        <h3>Atividades cadastradas</h3>
+        <ul>
+          {% for e in entries %}
+            <li>{{ e.get_day_display }} - {{ e.get_shift_display }}: {{ e.activity }}
+              <a class="btn btn-secondary" href="{% url 'schedule:delete' e.pk %}">Excluir</a>
+            </li>
+          {% empty %}
+            <li>Nenhuma atividade cadastrada.</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

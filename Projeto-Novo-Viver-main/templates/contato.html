@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Novo Viver</title>
+
+    <link rel="stylesheet" href="{% static 'contato.css' %}">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+
+                <!-- LOGO -->
+                <a href="{% url 'core:home' %}" class="logo">
+                    <img src="{% static 'images/novo_viver_4k.png' %}" alt="Projeto Novo Viver">
+                </a>
+
+                <!-- NAVBAR -->
+                <nav class="navbar">
+                    <a href="{% url 'core:home' %}#inicio">Início</a>
+                    <a href="{% url 'core:home' %}#sobre">Sobre Nós</a>
+                    <a href="{% url 'core:home' %}#projetos">Nossos Projetos</a>
+                    <a href="{% url 'core:home' %}#atividades-semanais">Atividades Semanais</a>
+                    <a href="{% url 'core:home' %}#voluntariado">Seja Voluntário</a>
+                    <a href="{% url 'core:contato' %}">Contato</a>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="{% url 'donations:donate' %}" class="btn-doe">Doe Agora</a>
+                    <a href="{% url 'admin:login' %}" class="btn-doe">Admin</a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <section class="contato">
+        <div class="container">
+
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="section-subtitle">Fale conosco e saiba como ajudar</p>
+
+            <div class="contato-content">
+                <div class="contato-form">
+                    <h3>Envie sua Mensagem</h3>
+
+                    <!-- FORMULÁRIO DE CONTATO -->
+                    <form method="post" action="{% url 'core:contact' %}">
+                        {% csrf_token %}
+                        <input type="text" name="nome" placeholder="Seu Nome" required>
+                        <input type="email" name="email" placeholder="Seu E-mail" required>
+                        <input type="tel" name="telefone" placeholder="Seu Telefone">
+                        <textarea name="mensagem" placeholder="Sua Mensagem" required></textarea>
+
+                        <button type="submit">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- VOLTAR -->
+            <a href="{% url 'core:home' %}" class="voltar">← Voltar para a Página Inicial</a>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© 2025 Projeto Novo Viver — Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
