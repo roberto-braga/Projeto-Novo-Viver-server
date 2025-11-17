@@ -11,7 +11,6 @@ user, created = User.objects.get_or_create(
     defaults={"email": email, "is_staff": True, "is_superuser": True},
 )
 
-# Ensure fields and password are set/updated
 user.email = email
 user.is_staff = True
 user.is_superuser = True
