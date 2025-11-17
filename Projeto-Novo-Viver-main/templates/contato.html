@@ -51,13 +51,9 @@
                     <h3>Envie sua Mensagem</h3>
 
                     <!-- FORMULÁRIO DE CONTATO -->
-                    <form method="post" action="{% url 'core:contact' %}">
+                    <form method="post" action="{% url 'core:contato' %}">
                         {% csrf_token %}
-                        <input type="text" name="nome" placeholder="Seu Nome" required>
-                        <input type="email" name="email" placeholder="Seu E-mail" required>
-                        <input type="tel" name="telefone" placeholder="Seu Telefone">
-                        <textarea name="mensagem" placeholder="Sua Mensagem" required></textarea>
-
+                        {{ form.as_p }}
                         <button type="submit">Enviar Mensagem</button>
                     </form>
                 </div>

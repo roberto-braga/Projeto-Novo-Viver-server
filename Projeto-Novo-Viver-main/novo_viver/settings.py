@@ -1,9 +1,13 @@
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+STATIC_URL = '/static/'
+
+STATIC_ROOT = Path(BASE_DIR, 'staticfiles')
+
 SECRET_KEY = "django-insecure-jspq*yqnt&d^84=eqs5q7%dlt(xe5dshp0ao1wh%5^wamk=a=f"
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",

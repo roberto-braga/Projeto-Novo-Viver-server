@@ -13,10 +13,6 @@ def home(request):
     return render(request, "index.html", {"schedule_map": schedule_map})
 
 
-def contato(request):
-    return render(request, "contato.html")   # ← A VIEW QUE FALTAVA
-
-
 class AdminAwareLoginView(LoginView):
     redirect_authenticated_user = True
 
@@ -30,13 +26,19 @@ class AdminAwareLoginView(LoginView):
         return reverse("core:home")
 
 
-def submit_contact(request):
+def contato(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, "Mensagem enviada! Obrigado pelo contato.")
+            form = ContactForm()
         else:
             messages.error(request, "Verifique os campos e tente novamente.")
-        return redirect(reverse("core:home") + "#contato")
-    return redirect("core:home")
+
+    else:
+        form = ContactForm()
+
+
+    return render(request, "contato.html", {"form": form})
+
